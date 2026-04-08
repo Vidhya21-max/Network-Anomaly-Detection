@@ -1,20 +1,15 @@
 # Real-Time Network Anomaly Detection System
 
-Unsupervised real-time network anomaly detection using **Autoencoder** (TensorFlow/Keras) and **Isolation Forest** (scikit-learn), with dynamic thresholding, streaming simulation, **Streamlit** dashboard, **Explainable AI (XAI)**, **Optuna** AutoML, **REST API**, **alerts**, **SQLite storage**, and **Docker** deployment.
+# Network Anomaly Detection
+
+This project detects unusual network activity using Machine Learning (Autoencoder).
+
+## Technologies
+Python, TensorFlow, Streamlit
 
 ## Features
-
-- **Dual models**: Autoencoder (reconstruction MSE) and Isolation Forest; compare in dashboard or CLI
-- **Unsupervised detection**: Train on normal traffic only; score = anomaly indicator
-- **Real-time streaming**: Packet-by-packet or batch simulation with optional delay
-- **Dashboard**: Model selector, live score graph, packet table, severity, XAI, **evaluation metrics (Precision/Recall/F1/ROC)** when labels exist, **stored anomalies** from DB
-- **Evaluation**: `evaluate.py` and `main.py --evaluate` for Precision, Recall, F1, ROC curve and AUC (when dataset has labels)
-- **Alerts**: Optional email for high-severity anomalies (env: `ALERT_EMAIL_TO`, `SMTP_HOST`, `SMTP_USER`, `SMTP_PASSWORD`); `main.py --alert`
-- **Database**: SQLite storage for detected anomalies (`data/anomalies.db`); `main.py --save-db`; view in dashboard expander
-- **REST API**: FastAPI app — `POST /detect`, `GET /anomalies`, `GET /models`, `GET /health`; run with `uvicorn api.app:app`
-- **Docker**: `Dockerfile` and `docker-compose.yml` for API and dashboard services
-- **Modular layout**: `models/`, `utils/`, `streaming/`, `dashboard/`, `xai/`, `tuning/`, `alerts/`, `db/`, `api/`
-
+- Detects anomalies
+- Real-time monitoring
 ## Setup
 
 ```bash
